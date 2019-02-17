@@ -1,24 +1,27 @@
-<<<<<<< HEAD
-const gulp = require('gulp');
-const autoprefixer = require('gulp-autoprefixer');
+var gulp = require('gulp'),
 
-gulp.task('default', () =>
-    gulp.src('style.css')
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano');
+var rigger = require('gulp-rigger');
+
+
+gulp.task('autoprefix - плагин', function () {
+    return gulp.src('sass-style.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest('css/'))
-=======
-const gulp = require('gulp');
-const autoprefixer = require('gulp-autoprefixer');
+        .pipe(gulp.dest('css/'));
+});
 
-gulp.task('default', () =>
-    gulp.src('style.css')
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest('css/'))
->>>>>>> b9b5e3abf3bcf7fcade7db78b93c60989f7fb7c6
-);
+gulp.task('nano ', function () {
+    return gulp.src('sass-style.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('css/'));
+});
+gulp.task('html', function() {
+    gulp.src('index.html')
+        .pipe(rigger())
+        .pipe(gulp.dest('index.html'));
+});
+
