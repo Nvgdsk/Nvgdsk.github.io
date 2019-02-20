@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 var rigger = require('gulp-rigger');
 
 
+var templater = require('gulp-templater');
 gulp.task('autoprefix - плагин', function () {
     return gulp.src('sass-style.css')
         .pipe(autoprefixer({
@@ -23,5 +24,16 @@ gulp.task('html', function() {
     gulp.src('index.html')
         .pipe(rigger())
         .pipe(gulp.dest('index.html'));
+});
+gulp.task('test', function() {
+    gulp.src([
+        './source/pages/**'  // папки со страницами
+    ])
+        .pipe(templater({
+            layout: 'source/template/layout/index.html', // путь до шаблона
+            dist: 'public', // папка в которую будут сложены готовые страницы
+            source: 'source/pages', // участок пути до папки, который нужно исключить
+            partials: 'source/partials' // части страниц типа footer
+        }));
 });
 

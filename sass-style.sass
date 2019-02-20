@@ -1,3 +1,4 @@
+@import header.sass
 a
   text-decoration: none
   color: white
@@ -9,41 +10,39 @@ body
   padding: 0
   margin: 0 auto
   max-width: 1400px
-nav
-  display: flex
-  background-color: #131129
-  justify-content: space-between
+
+.mainconten
+  flex: 25%
+  display: grid
+  grid-template-columns: repeat(4, 2fr)
+  grid-gap: 10px
+  align-items: stretch
+
+.mainconten img
+  max-width: 100%
+  min-height: 100%
+  vertical-align: middle
+.main
+  grid-column: 1/4
+  grid-row: 1/4
+.mainconten div
+  position: relative
+h2
+  position	: absolute
+  top		: 0
+  left		: 0
+  width		: 100%
 
 
-
-  ul
-    display: flex
-    list-style-type: none
+h2 span
+  color			: white
+  font			: bold 24px/45px Helvetica, Sans-Serif
+  letter-spacing		: -1px
+  background		: rgba(0, 0, 0, 0.7)
+  padding			: 10px
+  a
     color: white
 
-    li
-      display: inline
-      padding: 0 20px
-      font-size: 24px
-input
-  border: 1px solid #cccccc
-  border-radius: 3px
-  -webkit-border-radius: 3px
-.mainconten
-
-  display: grid
-  grid-template-columns: repeat(3, 1fr)
-  grid-gap: 10px
-  grid-auto-rows: minmax(100px, auto)
-.main
-  grid-column: 1/3
-  grid-row: 1 / 3
-
-
-
-.left
-  grid-column: 3/3
-  grid-row: 4
 .black
 
   a
@@ -53,22 +52,26 @@ input
   transition: background-color 2s
 
 
-.imggrid
-  position	: relative
-  width: 100%
+
+#title
+  align-self: center
+.maincontent
+  flex: 25%
+  display: grid
+  grid-template-columns: repeat(4, 2fr)
+
+  grid-gap: 10px
+  align-items: stretch
+
+.maincontent img
+  max-width: 100%
+  min-height: 100%
+  vertical-align: middle
+
+
+
+.immage-news
+  display: grid
+  grid-column: 1/1
   img
     width: 100%
-  h2
-    position	: absolute
-    top: 0
-    left		: 0
-    width		: 100%
-
-    span
-      color			: white
-      font			: bold 24px/45px Helvetica, Sans-Serif
-      letter-spacing		: -1px
-      background		: rgb(0, 0, 0)
-      background		: rgba(0, 0, 0, 0.7)
-      padding			: 10px
-
