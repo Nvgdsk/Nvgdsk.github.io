@@ -12,6 +12,8 @@ body {
   max-width: 1400px; }
 
 .mainconten {
+  grid-column: 1/12;
+  grid-row: 2;
   flex: 25%;
   display: grid;
   grid-template-columns: repeat(4, 2fr);
@@ -49,5 +51,9 @@ h2, .min_main span {
 
 #title {
   align-self: center; }
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px; }
 
 /*# sourceMappingURL=style_mainpage.css.map */
