@@ -1,4 +1,5 @@
-nav
+$categorycolor: gray
+nav, .category
   display: flex
   background-color: #131129
   justify-content: space-between
@@ -100,3 +101,13 @@ h4
 header
   grid-row: 1
   grid-column: 1/12
+.category
+  background-color: $categorycolor
+  grid-column: 1/12
+  nav
+    li
+      font-size: 16px
+      cursor: pointer
+      transition: color 1s,font-size 2s,border-bottom-width
+
+
