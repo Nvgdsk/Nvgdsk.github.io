@@ -1,17 +1,17 @@
-nav {
+nav, .category {
   display: flex;
   background-color: #131129;
   justify-content: space-between; }
-  nav ul {
+  nav ul, .category ul {
     display: flex;
     list-style-type: none;
     color: white; }
-    nav ul li {
+    nav ul li, .category ul li {
       display: inline;
       padding: 0 20px;
       font-size: 24px;
       align-self: center; }
-      nav ul li input {
+      nav ul li input, .category ul li input {
         color: white;
         height: auto; }
 
@@ -100,5 +100,13 @@ h4 {
 header {
   grid-row: 1;
   grid-column: 1/12; }
+
+.category {
+  background-color: gray;
+  grid-column: 1/12; }
+  .category nav li {
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 1s, font-size 2s, border-bottom-width; }
 
 /*# sourceMappingURL=header.css.map */
